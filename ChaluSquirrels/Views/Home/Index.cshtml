@@ -1,0 +1,60 @@
+﻿
+@foreach (MenuItem singleMenu in ApplicationVariables.Config.Menus)
+{
+    @Html.Partial("SingleSection", singleMenu)
+}
+
+<br/><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+
+            $(document).click(function (event) {
+                $('.navbar-collapse').collapse('hide');
+            });
+
+
+            $('a[href^="#"]').on('click', function (e) {
+                e.preventDefault();
+
+                var target = this.hash;
+                var $target = $(target);
+                
+                $('html, body').stop().animate({
+                    'scrollTop': $target.offset().top
+                }, 900, 'swing', function () {
+                    if ($('body').scrollTop() > 20) {
+                        $('.go-to-top').fadeIn();
+                    }
+                    else {
+                        $('.go-to-top').fadeOut();
+                    }
+                });
+            });
+
+            $(".owl-carousel").owlCarousel({
+                autoplay: true,
+                autoplayTimeout: 2500,
+                autoplayHoverPause: true,
+                loop: true,
+            });
+
+            if ($('body').scrollTop() > 20) {
+                $('.go-to-top').fadeIn();
+            }
+
+        });
+
+    </script>
+}
+

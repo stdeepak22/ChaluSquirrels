@@ -13,6 +13,8 @@ namespace ChaluSquirrels
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            ApplicationVariables.LoadAll();
         }
     }
 }

@@ -1,0 +1,163 @@
+﻿/*body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}*/
+
+/* Set padding to keep content from hitting the edges */
+/*.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}*/
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+body{
+    color:#8c9597;
+    background-image:url('/Images/pattern.png')
+}
+
+body *{
+        font-family: "Poppins", sans-serif;
+}
+
+body a{
+    transition:all 0.5s;
+}
+
+
+.section-description {
+    line-height: 26px;
+    margin-bottom: 60px;
+    font-size: 16px;    
+    font-family: "Lato";
+    font-weight: 400;
+}
+
+
+.navbar-brand
+{
+    font-family:'Dancing Script', cursive;
+    font-size:40px;
+    font-weight:bold;
+}
+
+
+.go-to-top{
+    position:fixed;
+    right:10px;
+    bottom:10px;
+    cursor:pointer;    
+    color:#ffde00;    
+    font-size:30px;
+    display:none;
+}
+
+
+/*#region Header */
+
+.parallax-header {
+    background-attachment: fixed;
+    width: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header .header-three-options {
+    width: 100%;
+    padding-top: 240px;
+    padding-bottom: 280px;
+    text-align: center;
+}
+
+    .header .header-three-options h1 {
+        margin: 0 0 29px 0;
+        line-height: 84px;
+        font-weight: 700;
+        font-size: 80px;
+        color: #fff;
+    }
+
+.header .icon-bar {
+    background-color: black;
+}
+
+.header .navbar-nav > li > a {
+    color: white;
+    text-align: center;
+    font-size: 16px;
+}
+
+.header .nav > li > a:hover,
+.header .nav > li > a:active,
+.header .nav > li > a:focus {
+    color: #ffde00;
+    background: #555;
+}
+
+
+
+.header .span-dot {
+    color: #ffde00;
+}
+
+.header .navbar-brand {
+    color: white;
+}
+
+.header .section-description {
+    color: #fff;    
+}
+
+.header .btn {
+    border-radius: 2px;
+    border: 3px solid white;
+    color: white;
+}
+
+
+@media (max-width: 767px){
+    .header .navbar-collapse {
+        background-color: #333;
+    }
+}
+
+/*#endregion */
+
+
+/*#region Body */
+
+.section{
+
+}
+
+.section .section-heading
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color:#545454;
+    text-align:center;
+    font-size: 35px;
+    line-height: 38px;
+    font-weight: 700;
+}
+
+
+.section .section-description {
+    text-align:justify;
+}
+
+
+.section-break{    
+    border:1px solid #8c9597;
+}
+/*#endregion */
+

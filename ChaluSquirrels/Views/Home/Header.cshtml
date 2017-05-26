@@ -1,0 +1,58 @@
+﻿<div class="header" id="top">
+    <div class="parallax-header" style="background-image:url('@Url.Content(ApplicationVariables.Config.Header.BigImage)')">
+        <div class="navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>                    
+                    @Html.ActionLink("Chalu Squirrels", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        @foreach (MenuItem item in ApplicationVariables.Config.Menus)
+                        {
+                            <li><a href="#@item.Id">@item.Name</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-three-options front-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1>
+                            @{
+                                var allKeywords = ApplicationVariables.Config.Header.BigImageCenterKeywords.Split(',', ';')
+                                    .Where(c => c.Length > 0)
+                                    .Select(c => c.Trim())
+                                    .ToList();
+                            }
+                            @for (int i = 0; i < allKeywords.Count; i++)
+                            {
+                                if(i!=0)
+                                {
+                                    <span class="span-dot">.</span>
+                                }
+                                @allKeywords[i]
+                            }                        
+                        </h1>
+                    </div><!--/.col-sm-12-->
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <div class="section-description">
+                            @ApplicationVariables.Config.Header.BigImageCenterDescription
+                        </div>
+                        @foreach (Button item in ApplicationVariables.Config.Header.BigImageCenterButtons)
+                        {
+                            <a href="@item.Link" id="@item.Id" title="@item.Text" class="btn btn-lg">@item.Text</a>
+                        }                                                 
+                    </div><!--/.col-sm-8.col-sm-offset-2-->
+                </div><!--/.row-->
+            </div><!--/.container-->
+        </div>
+    </div>
+
+</div>
