@@ -16,10 +16,8 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer class="text-center">            
-            <p>&copy; @DateTime.Now.Year - Chalu Squirrels</p>
-        </footer>
+        
+        @Html.Partial("_footer")
     </div>
 
     <a href="#top" class="go-to-top" title="Go to Top">

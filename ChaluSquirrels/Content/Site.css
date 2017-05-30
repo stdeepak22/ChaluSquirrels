@@ -29,6 +29,10 @@ body a{
     transition:all 0.5s;
 }
 
+hr{
+    border-top: 1px solid #ddd;
+}
+
 
 .section-description {
     line-height: 26px;
@@ -152,7 +156,7 @@ body a{
 
 
 .section .section-description {
-    text-align:justify;
+    text-align:center;
 }
 
 
@@ -161,3 +165,185 @@ body a{
 }
 /*#endregion */
 
+
+/*#region Contact Details */
+
+
+#contact-us .contact-us-box .box-left {
+    /* width: auto; */
+    margin: 0;
+    padding: 0 20px 0 0;
+    border-right: 1px solid #e1e1e1;
+    display: table-cell;
+    font-weight: 400;
+    font-size: 16px;
+    color: #f1d204;
+    font-family: "Lato";
+    line-height: 26px;
+}
+
+#contact-us .contact-us-box .box-right {
+    width: auto;
+    margin: 0;
+    padding: 0 0 0 20px;
+    display: table-cell;
+}
+#contact-us .contact-us-box
+{
+    float:left;
+}
+#contact-us .contact-us-social
+{
+    float:right;
+}
+
+#contact-us #post-query label{
+    font-weight:normal;
+}
+
+#contact-us .btn-submit{
+    background-color:#f1d204;
+    width:150px;
+    color:white;
+    font-weight:bold;
+    height:40px;
+}
+
+@media only screen and (max-width: 767px)
+{
+    #contact-us .contact-us-box .box-left {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: block;
+        border-right: none;
+    }
+
+    #contact-us .contact-us-box .box-right {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+
+    #contact-us .contact-us-box, #contact-us .contact-us-social
+    {
+        float:none;
+        margin-top:20px;
+    }    
+}
+
+/*#endregion */
+
+/*#region Footer */
+
+.footer
+{
+    display:block;
+    height:150px;
+    background-color:#545454;
+}
+
+/*#endregion */
+
+/*#region Social Logo Spits */
+
+.social-logo {
+    background-image: url('/Images/social-logo.jpg');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-position-y: -521px;
+    height: 45px;
+    width: 45px;
+    display: inline-block;
+    border-radius: 25px;
+    margin: 0px -5px;
+    
+
+    -moz-transform: scale(.7);
+    -ms-transform: scale(.7);
+    -o-transform: scale(.7);
+    -webkit-transform: scale(.7);
+    transform: scale(.7);
+
+}
+    .social-logo:hover {
+        -moz-transform: scale(.8);
+        -ms-transform: scale(.8);
+        -o-transform: scale(.8);
+        -webkit-transform: scale(.8);
+        transform: scale(.8);
+    }
+
+.social-logo-facebook{    
+    background-position-x:-84px;
+}
+
+.social-logo-twitter{
+    background-position-x:-157px;
+}
+
+.social-logo-linkedin{
+    background-position-x:-232px ;
+}
+
+.social-logo-google-plus{
+    background-position-x:-378px;
+}
+
+.social-logo-pinterest{
+    background-position-x:-453px;
+}
+/*#endregion */
+
+/*#region Team Member */
+#team .team-member{    
+    min-height:200px;
+}
+
+#team > :nth-child(2n+1) .person-position{    
+    color:rgb(241, 139, 109);
+}
+
+#team > :nth-child(2n+0) .person-position {    
+    color:rgb(241, 210, 4);
+}
+#team .team-member .person-image {
+    width: 125px;
+    margin-right: 25px;
+    float: left;
+}
+
+#team .team-member .person-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+#team .team-member .person-content
+{
+    text-align: left;
+    width: calc( 100% - 150px );
+    float: right;
+}
+
+#team .team-member .person-content h4{
+    color: #5e5e5e;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+#team .team-member .person-content .person-content-social {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#team .team-member .person-content .person-content-social li {
+    margin-left: 10px;
+    float: left;
+}
+
+/*#endregion */

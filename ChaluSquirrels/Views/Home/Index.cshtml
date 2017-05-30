@@ -1,59 +1,72 @@
-﻿
-@foreach (MenuItem singleMenu in ApplicationVariables.Config.Menus)
+﻿@model Menu
+
+@foreach (MenuItem singleMenu in Model)
 {
     @Html.Partial("SingleSection", singleMenu)
 }
 
-<br/><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 @section scripts
 {
     <script>
-        $(document).ready(function () {
+    $(document).ready(function () {
 
-            $(document).click(function (event) {
-                $('.navbar-collapse').collapse('hide');
+        $('#post-query').on('submit', function (event) {
+            event.preventDefault();
+            var dt = $(this).serialize();
+            console.log(dt);
+            $.post('@Url.Action("SendQuery","Home")', dt, function (result) {
+                console.log(result);
             });
+        })
+
+        $(document).on('scroll click', function () {
+            ShowHideGoToTop();
+            HideNavbarOnXSDevice();
+        })
 
 
-            $('a[href^="#"]').on('click', function (e) {
-                e.preventDefault();
+        $('a[href^="#"]').on('click', function (e) {
+            e.preventDefault();
 
-                var target = this.hash;
-                var $target = $(target);
-                
-                $('html, body').stop().animate({
-                    'scrollTop': $target.offset().top
-                }, 900, 'swing', function () {
-                    if ($('body').scrollTop() > 20) {
-                        $('.go-to-top').fadeIn();
-                    }
-                    else {
-                        $('.go-to-top').fadeOut();
-                    }
-                });
+            var target = this.hash;
+            var $target = $(target);
+            var variable = $('.navbar-collapse').height();
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top - (variable == 50 ? 0 : variable)
+            }, 900, 'swing', function () {
+                ShowHideGoToTop();
             });
-
-            $(".owl-carousel").owlCarousel({
-                autoplay: true,
-                autoplayTimeout: 2500,
-                autoplayHoverPause: true,
-                loop: true,
-            });
-
-            if ($('body').scrollTop() > 20) {
-                $('.go-to-top').fadeIn();
-            }
-
         });
+
+        
+        $("#team-member.owl-carousel").owlCarousel(GetDefaultOptions(1));
+        $(".owl-carousel").owlCarousel(GetDefaultOptions());
+    });
+
+    function GetDefaultOptions(items)
+    {
+        items = items===undefined ? 5 : items;
+        return {
+            //autoplay: true,
+            //autoplayTimeout: 2500,
+            autoplayHoverPause: true,            
+            items: items
+        };
+    }
+
+    function HideNavbarOnXSDevice()
+    {
+        $('.navbar-collapse').collapse('hide');
+    }
+    function ShowHideGoToTop()
+    {
+        if ($('body').scrollTop() > 20) {
+            $('.go-to-top').fadeIn();
+        }
+        else {
+            $('.go-to-top').fadeOut();
+        }
+    }
 
     </script>
 }

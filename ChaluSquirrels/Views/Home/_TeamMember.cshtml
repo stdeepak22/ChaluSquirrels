@@ -1,0 +1,32 @@
+﻿@model Team
+
+<div class="row" id="team">
+    @foreach (TeamMember mem in Model)
+	{        
+        <div class="col-md-4 col-md-offset-0 col-sm-5 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+            <div class="team-member">
+                <div class="person-image">
+                    <img src="@Url.Content(mem.ProfilePic)" alt="@mem.Name" title="@mem.Name">
+                </div>
+                <div class="person-content">
+                    <h4>@mem.Name</h4>
+                    <p class="person-position">@mem.Designation</p>
+                    <p>@mem.OneLine</p>
+                    <ul class="person-content-social clearfix">
+                        @foreach (SocialLink lnk in mem.SocialLinks)
+                        {
+                            if(lnk.Visible)
+                            {
+                                <li>
+                                    <a href="@lnk.Link" title="@lnk.Title" target="_blank" 
+                                       rel="nofollow"                                       
+                                       class="social-logo social-logo-@lnk.LogoName"></a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    }
+</div>

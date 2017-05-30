@@ -11,11 +11,14 @@
                     </a>*@
                 </h2>
             </div>
-            <div class="col-sm-10 col-sm-offset-1">
-                <div class="section-description">
-                    @Model.Description.Value
+            @if(!string.IsNullOrEmpty(Model.Description.Value))
+            {
+                <div class="col-sm-10 col-sm-offset-1">
+                    <div class="section-description">
+                        @Model.Description.Value
+                    </div>
                 </div>
-            </div>
+            }
         </div>
         @if (!string.IsNullOrEmpty(Model.PortfolioId))
         {
@@ -26,6 +29,16 @@
                 }
             </div>            
         }
+        
+        @if(Model.ShowContactDetails)
+        {
+            @Html.Partial("_Contact", ApplicationVariables.Config.Contact)
+        }
+        
+        @if(Model.ShowTeamMembers)
+        {
+            @Html.Partial("_TeamMember", ApplicationVariables.Config.Team)
+        }
     </div>
 </div>
-<hr class="section-break"/>
+<hr />

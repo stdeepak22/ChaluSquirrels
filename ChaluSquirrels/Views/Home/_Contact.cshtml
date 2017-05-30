@@ -1,0 +1,80 @@
+﻿@model Contact
+<div id="contact-us">
+    <div class="row">
+        @if(Model.Address.Visible)
+        { 
+            <div class="col-sm-4">
+                <div class="contact-us-box">
+                    <div class="box-left">
+                        @Model.Address.Heading
+                    </div>
+                    <div class="box-right">
+                        <div>@Model.Address.LineOne</div>
+                        <div>@Model.Address.LineTwo</div>
+                        <div>@Model.Address.LineThree</div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if(Model.CustomerSupport.Visible)
+        { 
+            <div class="col-sm-5">
+                <div class="contact-us-box">
+                    <div class="box-left">
+                        @Model.CustomerSupport.Heading
+                    </div>
+                    <div class="box-right">
+                        <div>@Model.CustomerSupport.Email</div>
+                        <div>@Model.CustomerSupport.Phone</div>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="col-sm-3">
+            <div class="contact-us-social">
+                @foreach (SocialLink item in Model.SocialLinks)
+                {
+                    if(item.Visible)
+                    {
+                        <a href="@item.Link" title="@item.Title" target="_blank" class="social-logo social-logo-@item.LogoName"></a>
+                    }
+                }                
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">        
+        <form class="form-horizontal" id="post-query">
+            <div class="row">
+                <!-- Text input-->
+                <div class="col-sm-4">
+                    <label for="name">Your Name (required)</label>
+                    <br/>
+                    <input id="name" name="Name" type="text" placeholder="" class="form-control input-md" required="" />                    
+                </div>
+
+                <div class=" col-sm-4">
+                    <label for="email">Your Email (required)</label>
+                    <br/>                    
+                    <input id="email" name="Email" type="text" placeholder="" class="form-control input-md" required="" />                    
+                </div>
+
+                <div class="col-sm-4">
+                    <label for="subject">Subject</label>
+                    <br/>                    
+                    <input id="subject" name="Subject" type="text" placeholder="" class="form-control input-md" />                    
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Text input-->
+                <div class="col-xs-12">
+                    <label for="message">Message</label>                    
+                    <textarea id="message" rows="7" name="Message" class="form-control input-md"></textarea>                    
+                    <br/>
+                    <input type="submit" class="btn btn-submit pull-right" value="Send" />
+                </div>
+            </div>
+        </form>    
+    </div>
+</div>
