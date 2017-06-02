@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <h2 class="section-heading">
-                    @Model.Name
+                    @Html.Raw(Model.Name)
                     @*<a href="#top" class="go-to-top" title="Go to Top">
                         <b class="glyphicon glyphicon-chevron-up"></b>
                     </a>*@
@@ -15,7 +15,7 @@
             {
                 <div class="col-sm-10 col-sm-offset-1">
                     <div class="section-description">
-                        @Model.Description.Value
+                        @Html.Raw(Model.Description.Value)
                     </div>
                 </div>
             }
@@ -25,19 +25,21 @@
             <div class="owl-carousel">
                 @foreach (Image item in ApplicationVariables.Config.Portfolios[Model.PortfolioId])
                 {
-                    <img src="@item.Path" title="@item.Title" />
+                    <div class="item">
+                        <img src="@item.Path" title="@item.Title" style="width:100%" />
+                    </div>
                 }
-            </div>            
+            </div>
+        }
+                
+        @if(Model.ShowTeamMembers)
+        {
+            @Html.Partial("_TeamMember", ApplicationVariables.Config.Team)
         }
         
         @if(Model.ShowContactDetails)
         {
             @Html.Partial("_Contact", ApplicationVariables.Config.Contact)
-        }
-        
-        @if(Model.ShowTeamMembers)
-        {
-            @Html.Partial("_TeamMember", ApplicationVariables.Config.Team)
         }
     </div>
 </div>

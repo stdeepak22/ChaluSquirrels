@@ -202,7 +202,7 @@ hr{
 }
 
 #contact-us .btn-submit{
-    background-color:#f1d204;
+    background-color:#6A4D8A;
     width:150px;
     color:white;
     font-weight:bold;
@@ -240,8 +240,10 @@ hr{
 .footer
 {
     display:block;
-    height:150px;
-    background-color:#545454;
+    height:50px;
+    background-color:#545454;    
+    padding-top:20px;
+    margin-bottom:5px;
 }
 
 /*#endregion */
@@ -301,13 +303,19 @@ hr{
     min-height:200px;
 }
 
-#team > :nth-child(2n+1) .person-position{    
+
+#team > :nth-child(3n+1) .person-position{    
     color:rgb(241, 139, 109);
 }
 
-#team > :nth-child(2n+0) .person-position {    
+#team > :nth-child(3n+2) .person-position{    
     color:rgb(241, 210, 4);
 }
+
+#team > :nth-child(3n+0) .person-position {    
+    color:#6A4D8A;
+}
+
 #team .team-member .person-image {
     width: 125px;
     margin-right: 25px;
@@ -333,7 +341,9 @@ hr{
     line-height: 24px;
     font-weight: 700;
 }
-
+#team .team-member .person-content .person-position{
+    font-weight:500;
+}
 #team .team-member .person-content .person-content-social {
     width: 100%;
     margin: 0;

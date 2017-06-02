@@ -2,7 +2,7 @@
 
 @foreach (MenuItem singleMenu in Model)
 {
-    @Html.Partial("SingleSection", singleMenu)
+    @Html.Partial("SingleSection", singleMenu)    
 }
 
 @section scripts
@@ -47,10 +47,17 @@
     {
         items = items===undefined ? 5 : items;
         return {
-            //autoplay: true,
-            //autoplayTimeout: 2500,
-            autoplayHoverPause: true,            
-            items: items
+            items: 4,
+            itemsDesktop: [1199, 4],
+            itemsDesktopSmall: [980, 2],
+            itemsTablet: [768, 1],
+            itemsMobile: [479, 1],
+
+            //Autoplay
+            autoPlay: true,
+
+            //Auto height
+            autoHeight: true
         };
     }
 
